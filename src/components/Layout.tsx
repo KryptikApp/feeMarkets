@@ -25,17 +25,17 @@ export default function Layout({ children }: any) {
         <title>Network Fees</title>
         <meta
           name="description"
-          content="Privacy preserving face authentication on the browser."
+          content="A visual exploration of decentralized fee markets."
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@kryptikApp" />
         <meta name="twitter:title" content="Faze ID" />
         <meta
           name="twitter:description"
-          content="Privacy preserving face authentication on the browser."
+          content="A visual exploration of decentralized fee markets."
         />
-        <meta name="twitter:image" content="/fazeLogo.png" />
-        <link rel="icon" href="/fazeLogo.png" />
+        <meta name="twitter:image" content="/icon.png" />
+        <link rel="icon" href="/icon.png" />
       </Head>
       {/* add custom font */}
       <style jsx global>{`
