@@ -2,10 +2,10 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { Toaster } from "react-hot-toast";
 import Navbar from "./navbars/Navbar";
-import { Inter } from "next/font/google";
+import { Inter, Roboto } from "next/font/google";
 import { useEffect, useState } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+const mainFont = Inter({ subsets: ["latin"] });
 
 // TODO: Update to support dynamic headers
 export default function Layout({ children }: any) {
@@ -40,7 +40,7 @@ export default function Layout({ children }: any) {
       {/* add custom font */}
       <style jsx global>{`
         html {
-          font-family: ${inter.style.fontFamily};
+          font-family: ${mainFont.style.fontFamily};
         }
       `}</style>
       <main className={``}>
