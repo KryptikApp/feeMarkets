@@ -20,7 +20,7 @@ export default function Layout({ children }: any) {
   }, []);
 
   return (
-    <div className={`min-h-screen pb-20 ${isDark && "dark"} px-4`}>
+    <div className={`min-h-screen pb-20 dark px-4`}>
       <Head>
         <title>Network Fees</title>
         <meta
