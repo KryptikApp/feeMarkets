@@ -65,7 +65,7 @@ const SolFeeCard: NextPage<Props> = (props) => {
               <p>{((mosetRecentSolFeeData.cu / 48000000) * 100).toFixed(2)}%</p>
             </div>
             <div className="flex flex-row space-x-2">
-              <p className="font-semibold">Percent Priority:</p>
+              <p className="font-semibold">Priority Percent:</p>
               <p>{(mosetRecentSolFeeData.fees_percentage * 100).toFixed(2)}%</p>
             </div>
             <div className="text-right text-gray-200">
