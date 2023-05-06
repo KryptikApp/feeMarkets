@@ -1,8 +1,5 @@
-import { fetchSolFeeBlocks } from "@/data/historical/fetchSolData";
-import { computeUniswapTxCost, fetchCurrentFeeData } from "@/data/live/evm";
 import { ISolSlotFee } from "@/data/types/sol";
 import { LoadingOutlined, RedoOutlined } from "@ant-design/icons";
-import { FeeData } from "ethers";
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
 
