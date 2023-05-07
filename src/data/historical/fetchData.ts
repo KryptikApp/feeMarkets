@@ -50,16 +50,18 @@ export async function fetchSolFeeBlocks(
   endSlot?: number
 ): Promise<ISlotFee[]> {
   // fetch latest slot if not provided
+  const mostRecentSlot = await solProvider.getSlot();
+  // using most recent minus offset because the most recent slot may not have propogated
   if (!endSlot) {
-    endSlot = endSlotSol;
+    endSlot = mostRecentSlot - 100;
   }
   if (!startSlot) {
-    startSlot = startSlotSol;
+    startSlot = mostRecentSlot - 110;
   }
-  const totalDays = (endSlotSol - startSlotSol) / slotsPerDaySol;
+  const totalDays = (endSlot - startSlot) / slotsPerDaySol;
   const maxToFetch = Math.floor(totalDays * maxlotsPerDay);
   console.log(`Fetching ${maxToFetch} sol slots`);
-  const toSkip = Math.floor((endSlotSol - startSlotSol) / maxToFetch);
+  let toSkip = Math.floor((endSlotSol - startSlotSol) / maxToFetch);
   const feeSlotResult: ISlotFee[] = [];
   for (let i = startSlot; i < endSlot; i += toSkip) {
     try {
@@ -132,7 +134,7 @@ export async function fetchEthFeeBlocks(
   }
   // init eth rpc client
   const ethProvider = new JsonRpcProvider(rpcEndpointEth);
-  const totalDays = (endSlotEth - startSlotEth) / slotsPerDayEth;
+  const totalDays = (endSlot - startSlot) / slotsPerDayEth;
   const maxToFetch = Math.floor(totalDays * maxlotsPerDay);
   const toSkip = Math.floor((endSlotEth - startSlotEth) / maxToFetch);
   const feeSlotResult: ISlotFee[] = [];
@@ -185,5 +187,6 @@ export async function fetchEthFeeBlocks(
   return feeSlotResult;
 }
 
+// uncomment to fetch data
 // fetchSolFeeBlocks().then(() => console.log("done fetching sol fee data"));
-fetchEthFeeBlocks().then(() => console.log("done fetching eth fee data"));
+// fetchEthFeeBlocks().then(() => console.log("done fetching eth fee data"));
