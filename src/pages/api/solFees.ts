@@ -1,10 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { fetchSolFeeBlocks } from "@/data/historical/fetchSolData";
-import { ISolSlotFee } from "@/data/types/sol";
+import { fetchSolFeeBlocks } from "@/data/historical/fetchData";
+import { ISlotFee } from "@/data/types/feeSlot";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
-  feeData: ISolSlotFee[] | null;
+  feeData: ISlotFee[] | null;
 };
 
 export default async function handler(
