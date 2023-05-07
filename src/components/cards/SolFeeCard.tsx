@@ -1,3 +1,4 @@
+import { ISlotFee } from "@/data/types/feeSlot";
 import { ISolSlotFee } from "@/data/types/sol";
 import { LoadingOutlined, RedoOutlined } from "@ant-design/icons";
 import { NextPage } from "next";
@@ -10,7 +11,7 @@ type Props = {
 };
 
 const SolFeeCard: NextPage<Props> = (props) => {
-  const [solFeeData, setSolFeeData] = useState<ISolSlotFee[] | null>(null);
+  const [solFeeData, setSolFeeData] = useState<ISlotFee[] | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [mosetRecentSolFeeData, setMostRecentSolFeeData] =
     useState<ISolSlotFee | null>(null);
